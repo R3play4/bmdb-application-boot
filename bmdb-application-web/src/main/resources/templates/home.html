@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <link href="css/bootstrap.css" rel="stylesheet"></link>
+  <link href="css/album.css" rel="stylesheet"></link>
+  <title>BMDB - Fodor Norbert</title>
+</head>
+<body>
+<div class="container-fluid">
+
+  <header id="header">
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark md-3">
+      <a class="navbar-brand" href="#">Mediareview</a>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" href="media">Media</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Language
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="#">Magyar</a>
+              <a class="dropdown-item" href="#">English</a>
+              <a class="dropdown-item" href="#">French</a>
+            </div>
+          </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0" method="POST" action="logout">
+          <button class="btn btn-outline-light" type="submit">Logout</button>
+        </form>
+      </div>
+    </nav>
+  </header>
+
+  <div class="card border-primary mb-3">
+    <div class="card-header bg-primary text-light">
+      User details
+    </div>
+    <div class="card-body">
+      <form action="home" method="post">
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="basic-addon1">Name</span>
+        </div>
+        <input type="text" name="username" class="form-control" th:placeholder="${user.getName()}" aria-label="Username" aria-describedby="basic-addon1">
+      </div>
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="basic-addon2">Email address</span>
+        </div>
+        <input type="text" name="email" class="form-control"  th:placeholder="${user.getEmail()}" aria-label="Username" aria-describedby="basic-addon1">
+      </div>
+      <button type="submit" class="btn btn-primary mb-2">Save</button>
+      </form>
+    </div>
+  </div>
+  </div>
+
+
+  <div class="card border-primary">
+    <div class="card-header bg-primary text-light">
+      Reviews
+    </div>
+    <div class="card-body">
+      <table class="table">
+        <thead class="border-warning">
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Review text</th>
+          <th scope="col">Creator</th>
+          <th scope="col">Associated media</th>
+          <th scope="col">Rating</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="review,iter: ${user.getReviews()}">
+          <td th:text="${iter.index + 1}">
+          <td th:text="${review.getText()}">
+          <td th:text="${user.getName()}"></td>
+          <td th:text="${review.getMedia().getTitle()}"></td>
+          <td th:text="${review.getRating()}"></td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+</div>
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+    <link href="css/bootstrap.css" rel="stylesheet"></link>
+    <title>BMDB - Fodor Norbert</title>
+</head>
+<body>
+<div class="container">
+    <div class="jumbotron bg-dark text-center text-light">
+        <h1>Welcome to BMDB!</h1>
+        <p1>A media rating interface for reviewing and checking out details of series' and movies.</p1>
+    </div>
+
+    <h2 class="text-center"><span class="text-primary">Login</span> or <span class="text-primary">Register</span> to Start</h2>
+
+    <div class="card mx-auto" style="width: 16rem;">
+        <div class="card-header border-primary bg-primary text-light font-weight-bold">
+            Login
+        </div>
+        <form method="post" action="/login" class="form-signin">
+            <div class="card-body">
+                <div class="form-group">
+                    <input type="text" class="form-control" id="email" name="email" aria-describedby="emailHelp" placeholder="Email">
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="form-group">
+                    <input type="password" class="form-control" id="passWord" name="passWord" aria-describedby="emailHelp" placeholder="Password">
+                    <button type="submit" class="btn btn-primary mb-2">Login</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>
