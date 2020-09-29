@@ -27,8 +27,8 @@ In order to initialize the database with data the following url have to be calle
 http://localhost:8080/start
 
 ###### Test Users
-username: pauly@gmail.com
-password: admin
+**username:** pauly@gmail.com
+**password:** admin
 
-username: gjacob@gmail.com
-password: admin
+**username:** gjacob@gmail.com
+**password:** admin
